@@ -9,7 +9,6 @@ async function createUserDB(name, surname, email, pwd) {
         await client.query(`commit`)
         return result;
     } catch (err) {
-        console.log(err.message);
         await client.query(`rollback`);
         return [];
     }
@@ -23,4 +22,4 @@ async function getUserByEmail(email) {
 
 }
 
-module.exports = { createUserDB,getUserByEmail };
+module.exports = { createUserDB, getUserByEmail };
